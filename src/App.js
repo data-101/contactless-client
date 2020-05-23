@@ -1,24 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
+import QrReader from 'react-qr-reader'
 import './App.css';
 
+
+const qr= {
+  background: 'white',
+  border: '1em solid blue',
+  maxWidth: '60em',
+  margin: '0 auto'
+}
+
 function App() {
+
+  const handleScan = data => {
+    if (data) {
+  
+    }
+  }
+  const handleError = err => {
+    console.error(err)
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <h1>Contactless</h1>
+        <QrReader
+          delay={300}
+          onError={handleError}
+          onScan={handleScan}
+          style={qr}
+        />
     </div>
   );
 }
