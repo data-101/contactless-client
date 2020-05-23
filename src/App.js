@@ -3,12 +3,7 @@ import QrReader from 'react-qr-reader'
 import './App.css';
 
 
-const qr= {
-  background: 'white',
-  border: '1em solid blue',
-  maxWidth: '60em',
-  margin: '0 auto'
-}
+
 
 function App() {
 
@@ -25,11 +20,12 @@ function App() {
   return (
     <div className="App">
         <h1>Contactless</h1>
+        <h3>Helping you have a safer store experience!!</h3>
         <QrReader
           delay={300}
           onError={handleError}
           onScan={handleScan}
-          style={qr}
+          className="qr"
         />
     </div>
   );
